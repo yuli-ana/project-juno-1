@@ -1,0 +1,258 @@
+footer {
+  background-color: $secondary-light;
+  color: $primary-light;
+}
+
+.footer {
+  position: relative;
+
+  &.row {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .col {
+    margin: 0;
+
+    &.col-40 {
+      flex: 0 0 450px;
+      max-width: 450px;
+      margin-left: 20px;
+    }
+
+    &.col-45 {
+      flex: 0 0 585px;
+      max-width: 585px;
+    }
+  }
+
+  //Footer-left styles
+  .footer-left {
+    padding-bottom: 25px;
+    .footer-header {
+      margin: 50px 0 15px;
+
+      h4 {
+        @include font-size(18);
+        margin-top: 20px;
+      }
+
+      p {
+        @include font-size(12);
+        line-height: 1.8;
+        margin: 0;
+      }
+    }
+
+    .navigation-list-bottom {
+      a {
+        color: inherit;
+        padding: 0 15px 0 0;
+      }
+
+      #{$anchor-tag-hover-focus} {
+        color: $secondary-dark;
+      }
+    }
+
+    .copyright {
+      @include font-size(11);
+      font-weight: $bold;
+      margin: 40px 0 0;
+    }
+  }
+
+  //Footer-right styles
+  .footer-right {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background-color: $secondary-dark;
+    padding: 60px 65px 34px;
+
+    h4 {
+      @include font-size(16);
+      margin-bottom: 20px;
+    }
+
+    p {
+      line-height: 1.8;
+      @include font-size(11);
+    }
+
+    //Responsive styles for phone and down (footer-right)
+    @include phone {
+      p {
+        @include font-size(8);
+      }
+    }
+  }
+
+  //Form styles
+  .my-form {
+    input[type="email"] {
+      display: block;
+      width: 100%;
+      padding: 20px;
+      margin-bottom: 15px;
+
+      &::placeholder {
+        @include font-size(12);
+        letter-spacing: 1px;
+      }
+    }
+
+    button[type="submit"] {
+      background-color: rgb(246, 207, 181);
+      padding: 16px 25px;
+      text-transform: capitalize;
+      @include font-size(12);
+      letter-spacing: 1px;
+      cursor: pointer;
+      @include transition;
+
+      &:hover,
+      &:focus {
+        background-color: $bg-blue;
+      }
+    }
+
+    input[type="email"],
+    button[type="submit"] {
+      box-shadow: 0px 0px 2px black;
+      border: none;
+      border-radius: 4px;
+    }
+  }
+
+  //Responsive styles for small-desktop
+  @include small-desktop {
+    .col {
+      &.col-40 {
+        flex: 0 1 450px;
+      }
+
+      &.col-45 {
+        flex: 0 1 350px;
+        max-width: 350px;
+      }
+    }
+
+    .footer-left {
+      .footer-header {
+        h4 {
+          @include font-size(15);
+          margin: 10px 0;
+        }
+
+        p {
+          @include font-size(10);
+          line-height: 1.6;
+        }
+      }
+
+      .navigation-list-bottom {
+        a {
+          @include font-size(12);
+        }
+      }
+    }
+
+    .footer-right {
+      padding: 45px 50px 30px;
+    }
+  }
+
+  //Responsive styles for tablet-landscape
+  @include tablet-landscape {
+    .col {
+      &.col-40 {
+        margin-left: 0;
+      }
+
+      &.col-45 {
+        flex-shrink: 0;
+      }
+    }
+
+    .footer-left {
+      .navigation-list-bottom {
+        &.row {
+          flex-wrap: wrap;
+        }
+
+        a {
+          padding: 0 15px 0 0;
+          @include font-size(10);
+        }
+      }
+    }
+
+    .footer-right {
+      position: relative;
+
+      p {
+        @include font-size(10);
+      }
+    }
+  }
+
+  //Responsive styles for tablet-portrait
+  @include tablet-portrait {
+    &.row {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .col {
+      &.col-40 {
+        flex: 0 0 100%;
+        max-width: 100%;
+        margin: 30px 0 50px;
+      }
+
+      &.col-45 {
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+    }
+
+    .footer-right {
+      padding: 50px 30px 20px;
+    }
+  }
+
+  //Responsive styles for phones and down
+  @include phone {
+    .footer-left {
+      .copyright {
+        @include font-size(10);
+      }
+    }
+
+    .footer-right {
+      h4 {
+        @include font-size(13);
+      }
+
+      p {
+        @include font-size(8);
+      }
+    }
+
+    .my-form {
+      input[type="email"] {
+        padding: 10px 20px;
+
+        &::placeholder {
+          @include font-size(10);
+        }
+      }
+
+      button[type="submit"] {
+        padding: 10px 20px;
+        @include font-size(10);
+      }
+    }
+  }
+}

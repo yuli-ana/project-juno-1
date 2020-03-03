@@ -1,0 +1,153 @@
+.section-course {
+  background-color: $bg-blue;
+  width: 93%;
+  margin: 0 0 0 auto;
+  padding: 90px;
+  color: $secondary-dark;
+
+  h2 {
+    @include font-size(35);
+    margin-bottom: 90px;
+  }
+
+  .article-course {
+    position: relative;
+
+    img {
+      width: 100%;
+    }
+
+    .article-course-toggle {
+      position: absolute;
+      top: -50px;
+      right: -80px;
+      background-color: $secondary-light;
+      width: 220px;
+      height: 100px;
+
+      .col-50 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 0 0 50%;
+        max-width: 50%;
+        @include font-size(30);
+
+        button {
+          color: $primary-light;
+          @include transition;
+          background: transparent;
+          border: none;
+          padding: 0;
+          line-height: 0;
+        }
+
+        &:hover button,
+        &:focus button {
+          color: $secondary-dark;
+        }
+      }
+
+      //Responsive styles small-desktop
+      @include small-desktop {
+        width: 180px;
+      }
+    }
+  }
+
+  .article-course-info {
+    .date-orange {
+      display: inline-block;
+      color: $secondary-light;
+      margin: 25px 0;
+    }
+
+    h3 {
+      @include font-size(26);
+    }
+  }
+
+  //Responsive styles tablet-landscape
+  @include tablet-landscape {
+    width: calc(90% - 40px);
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 50px;
+
+    h2 {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .row {
+      justify-content: center;
+    }
+
+    .article-course {
+      .article-course-toggle {
+        top: -30px;
+        right: -50px;
+        width: 150px;
+        height: 60px;
+
+        .col-50 {
+          @include font-size(20);
+        }
+      }
+    }
+
+    .article-course-info {
+      h3 {
+        @include font-size(22);
+      }
+    }
+  }
+
+  //Responsive styles for tablet-portrait
+  @include tablet-portrait {
+    padding: 35px;
+
+    h2 {
+      @include font-size(28);
+      margin-bottom: 40px;
+    }
+
+    .article-course-info {
+      h3 {
+        @include font-size(16);
+      }
+    }
+  }
+
+  //Responsive styles for phones and down
+  @include phone {
+    width: calc(100% - 40px);
+    padding: 20px;
+
+    h2 {
+      @include font-size(18);
+    }
+
+    .article-course {
+      .article-course-toggle {
+        right: -30px;
+        width: 100px;
+        height: 50px;
+
+        .col-50 {
+          @include font-size(14);
+        }
+      }
+    }
+
+    .article-course-info {
+      .date-orange {
+        margin: 15px 0;
+      }
+
+      h3 {
+        @include font-size(11);
+      }
+    }
+  }
+}

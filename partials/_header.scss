@@ -1,0 +1,87 @@
+header {
+  padding-bottom: 100px;
+
+  img {
+    width: 100%;
+  }
+
+  .hero {
+    position: relative;
+
+    .hero-introduction {
+      position: absolute;
+      bottom: -55px;
+      left: 0;
+      font-family: $secondary-font;
+      color: $primary-light;
+      width: 600px;
+      background-color: $secondary-light;
+      padding: 45px;
+      @include font-size(20);
+      z-index: 100;
+
+      h1 {
+        font-weight: $regular;
+        @include font-size(40);
+      }
+
+      p {
+        @include font-size(12);
+        font-family: $primary-font;
+        line-height: 1.8;
+        margin: 15px 0 0;
+        font-weight: $medium;
+      }
+    }
+  }
+
+  //Responsive styles for small-desktop
+  @include small-desktop {
+    padding-bottom: 80px;
+    .hero {
+      .hero-introduction {
+        width: 400px;
+        padding: 30px;
+
+        h1 {
+          @include font-size(30);
+        }
+
+        p {
+          @include font-size(10);
+        }
+      }
+    }
+  }
+
+  //Responsive styles for tablet-landscape
+  @include tablet-landscape {
+    .hero {
+      .hero-introduction {
+        position: relative;
+        bottom: 0;
+        width: 100%;
+        padding: 40px;
+      }
+    }
+  }
+
+  //Responsive styles for phones and down
+  @include phone {
+    padding-bottom: 60px;
+    .hero {
+      .hero-introduction {
+        padding: 25px;
+
+        h1 {
+          @include font-size(20);
+        }
+
+        p {
+          @include font-size(8);
+          line-height: 1.6;
+        }
+      }
+    }
+  }
+}

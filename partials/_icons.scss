@@ -1,0 +1,18 @@
+.footer-right {
+  .fab {
+    color: $primary-light;
+    @include font-size(20);
+    padding: 10px 15px;
+  }
+
+  //Responsive styles for phones and down
+  @include phone {
+    .icons {
+      text-align: center;
+    }
+
+    .fab {
+      padding: 0 10px;
+    }
+  }
+}

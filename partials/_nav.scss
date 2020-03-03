@@ -1,0 +1,124 @@
+nav {
+  .navigation {
+    padding: 45px 0;
+
+    .row {
+      justify-content: flex-start;
+    }
+
+    img {
+      flex: 0 1 350px;
+      max-width: 350px;
+      margin-right: 40px;
+    }
+
+    .navigation-list-top {
+      flex: 0 2 auto;
+
+      &.row {
+        justify-content: flex-start;
+        align-items: center;
+      }
+
+      #{$anchor-tag-hover-focus} {
+        color: $secondary-light;
+      }
+    }
+
+    label[for="toggle"],
+    input[type="checkbox"] {
+      display: none;
+    }
+  }
+
+  //Responsive styles for tablet-landscape
+  @include tablet-landscape {
+    .navigation-list-top {
+      a {
+        @include font-size(10);
+      }
+    }
+  }
+
+  //Responsive styles for tablet-portrait
+  @include tablet-portrait {
+    .navigation {
+      .row {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      img {
+        margin: 0 0 20px 0;
+      }
+    }
+  }
+
+  //Responsive styles for phones and down
+  @include phone {
+    .navigation {
+      padding: 50px 0;
+
+      .row {
+        justify-content: flex-start;
+      }
+
+      img {
+        flex: 0 0 250px;
+        max-width: 250px;
+        margin: 0;
+      }
+
+      .navigation-list-top {
+        position: fixed;
+        top: 40px;
+        left: -30%;
+        width: 30%;
+        z-index: 200;
+        background-color: rgba($bg-blue, 1);
+        text-align: center;
+        transition: all 0.5s;
+
+        &.row {
+          flex-direction: column;
+        }
+
+        li {
+          width: 100%;
+
+          a {
+            display: inline-block;
+            border-bottom: 1px solid black;
+            width: 100%;
+            padding: 20px;
+            text-shadow: 1px 1px 1px rgba($secondary-dark, 0.9);
+            @include font-size(10);
+          }
+
+          &:last-child a {
+            border-bottom: none;
+          }
+        }
+      }
+
+      label[for="toggle"],
+      input[type="checkbox"] {
+        display: block;
+        appearance: none;
+      }
+
+      input[type="checkbox"]:checked + .navigation-list-top {
+        left: 0;
+      }
+
+      label[for="toggle"] {
+        position: fixed;
+        right: 30px;
+        top: 55px;
+        @include font-size(16);
+        color: $secondary-dark;
+        z-index: 200;
+      }
+    }
+  }
+}
